@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://seusite.github.io/</loc>
+    <loc>https://andre0gondek.github.io/Site-RLTech/</loc>
+    <lastmod>2025-07-04</lastmod>
+  </url>
+  <url>
+    <loc>https://andre0gondek.github.io/Site-RLTech/servicos.html</loc>
     <lastmod>2025-07-04</lastmod>
   </url>
 </urlset>
