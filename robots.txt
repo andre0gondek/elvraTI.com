@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://andre0gondek.github.io/Site-RLTech/sitemap.xml
