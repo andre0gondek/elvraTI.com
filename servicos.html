@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="imagens/icone RL.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="stylefooter.css">
+  <title>Catálogo de Serviços - RLTech</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0a0a0a;
+      color: #ffffff;
+      padding: 60px 40px;
+      line-height: 1.6;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      color: #1db1ff;
+    }
+
+    .categoria {
+      margin-top: 60px;
+    }
+
+    .categoria h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      border-left: 6px solid #1db1ff;
+      padding-left: 16px;
+    }
+
+    .grid-servicos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .card-servico {
+      background-color: #121212;
+      border-radius: 10px;
+      padding: 20px;
+      border: 1px solid #2a2a2a;
+      box-shadow: 0 0 20px rgba(29, 177, 255, 0.1);
+      transition: transform 0.2s ease;
+      text-decoration: none;
+      color: white;
+    }
+
+    .card-servico:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 25px rgba(29, 177, 255, 0.3);
+    }
+
+    .card-servico h3 {
+      
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .card-servico .preco {
+      color: #1db1ff;
+      font-weight: 600;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      background-color: #1db1ff;
+      color: #011425;
+      padding: 4px 8px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .btn-voltar {
+  display: inline-block;
+  margin-bottom: 40px;
+  background: none;
+  border: 2px solid #1db1ff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #1db1ff;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-voltar:hover {
+  background-color: #1db1ff;
+  color: #011425;
+}
+  </style>
+</head>
+
+<body>
+  <a href="index.html" class="btn-voltar"><i class="fa-solid fa-house"></i> Home</a>
+  <h1>Catálogo de Serviços</h1>
+
+  <div class="categoria">
+    <h2>💻 PC Desktop</h2>
+    <div class="grid-servicos">
+      <a href="servicos/montagem.html" class="card-servico">
+        <span class="tag">Desktop</span>
+        <h3>Montagem completa de computador</h3>
+        <p class="preco">R$ 200,00</p>
+      </a>
+      <a href="servicos/limpeza-basica.html" class="card-servico">
+        <span class="tag">Desktop</span>
+        <h3>Limpeza básica</h3>
+        <p class="preco">R$ 100,00</p>
+      </a>
+      <a href="servicos/limpeza-bruta-pc.html" class="card-servico">
+        <span class="tag">Desktop</span>
+        <h3>Limpeza bruta</h3>
+        <p class="preco">R$ 200,00</p>
+      </a>
+      <a href="servicos/instalacao-hardware.html" class="card-servico">
+        <span class="tag">Desktop</span>
+        <h3>Instalação de hardware</h3>
+        <p class="preco">R$ 90,00 + peça</p>
+      </a>
+      
+  </div>
+
+  <div class="categoria">
+    <h2>🧳 Notebook</h2>
+    <div class="grid-servicos">
+      <a href="servicos/limpeza-bruta-note.html" class="card-servico">
+        <span class="tag">Notebook</span>
+        <h3>Limpeza bruta</h3>
+        <p class="preco">R$ 280,00</p>
+      </a>
+      <a href="servicos/upgrade-notebook.html" class="card-servico">
+        <span class="tag">Notebook</span>
+        <h3>Upgrade de peça (se possível)</h3>
+        <p class="preco">R$ 120,00</p>
+      </a>
+      <!-- <a href="servicos/diagnostico-hardware-note.html" class="card-servico">
+        <span class="tag">Notebook</span>
+        <h3>Diagnóstico de problema</h3>
+        <p class="preco">R$ 70,00</p>
+      </a> -->
+    </div>
+  </div>
+
+  <div class="categoria">
+    <h2>⚙️ Serviços de Software</h2>
+    <div class="grid-servicos">
+      <a href="servicos/instalacao-so.html" class="card-servico">
+        <span class="tag">Software</span>
+        <h3>Instalação de sistema operacional</h3>
+        <p class="preco">R$ 60,00</p>
+      </a>
+      <a href="servicos/formatacao-disco.html" class="card-servico">
+        <span class="tag">Software</span>
+        <h3>Formatação de disco</h3>
+        <p class="preco">R$ 80,00</p>
+      </a>
+      <a href="servicos/reset-senha.html" class="card-servico">
+        <span class="tag">Software</span>
+        <h3>Reset de senha</h3>
+        <p class="preco">R$ 40,00</p>
+      </a>
+      <!-- <a href="servicos/diagnostico-software.html" class="card-servico">
+        <span class="tag">Software</span>
+        <h3>Diagnóstico de problema no software</h3>
+        <p class="preco">R$ 30,00</p>
+      </a> -->
+      <a href="servicos/otimizacao.html" class="card-servico">
+        <span class="tag">Software</span>
+        <h3>Otimização de desempenho</h3>
+        <p class="preco">R$ 40,00</p>
+      </a>
+      <a href="servicos/remocao-virus.html" class="card-servico">
+        <span class="tag">Software</span>
+        <h3>Remoção de vírus/malware</h3>
+        <p class="preco">R$ 40,00</p>
+      </a>
+      <a href="servicos/diagnostico.html" class="card-servico">
+        <span class="tag">Software</span>
+        <h3>Diagnóstico</h3>
+        <p class="preco">R$ 70,00</p>
+      </a>
+    </div>
+  </div>
+
+  <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-box">
+      <img src="imagens/rltec-removebg.png" alt="">
+      <p class="footer-text">Tecnologia com responsabilidade.</p>
+    </div>
+
+    <div class="footer-box">
+      <h4>Links Rápidos</h4>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="index.html#sobre-nos">Sobre Nós</a></li>
+        <li><a href="servicos.html">Catálogo</a></li>
+        <li><a href="https://wa.me/5511961876851?text=Olá! Gostaria de agendar um atendimento com a RLTech." target="_blank">Atendimento</a></li>
+        <!-- <li><a href="contato.html">Contato</a></li> -->
+      </ul>
+    </div>
+
+    <div class="footer-box">
+      <h4>Contato</h4>
+      <ul>
+        <li>Email: rltech0725@gmail.com</li>
+        <li>WhatsApp: (11) 96187-6851</li>
+      </ul>
+      <h4>Endereço</h4>
+      <p>R. Manoel Martins da Rocha, 579 -
+            Jardim Mangalot, São Paulo - SP</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 RLTech Informática — Todos os direitos reservados.</p>
+  </div>
+</footer>
+</body>
+</html>
