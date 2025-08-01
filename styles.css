@@ -313,6 +313,36 @@ transform: translateX(5px);
 
 
 /* Estilo mobile */
+
+@media (min-width: 1501px) and (max-width: 1700px){
+  #content-right {
+    
+    left: 150px;
+  
+  }
+
+}
+
+@media (min-width: 1400px) and (max-width: 1500px){
+    /* Imagem com brilho azul */
+  #content-right {
+    
+    left: 50px;
+  
+  }
+
+}
+
+@media (min-width: 1025px) and (max-width: 1399.99px){
+    /* Imagem com brilho azul */
+  #content-right {
+    
+    left: 0px;
+  
+  }
+
+}
+
 @media (max-width: 768px) {
   .menu-toggle {
     position: fixed;
