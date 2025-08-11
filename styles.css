@@ -351,7 +351,6 @@ transform: translateX(5px);
   width: auto;
 }
 
-
 /* Menu visível em desktop */
 .menu ul {
   list-style: none;
@@ -511,7 +510,7 @@ body.light-mode a.btn:hover {
 }
 
 body.light-mode header.topo {
-  background-color: #f9f9f9;
+  background-color: #eaeaea;
   color: #121212;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
 }
@@ -591,12 +590,12 @@ body.light-mode #agendar p {
 
 /* Ajustes menu mobile no tema claro */
 body.light-mode .menu.active {
-  background-color: #f9f9f9;  /* fundo claro para menu ativo */
+  background-color: #eaeaea; 
 }
 
 body.light-mode .menu.active ul li a,
 body.light-mode .menu.active ul li button.toggle-theme-menu {
-  color: #121212;  /* texto escuro */
+  color: #121212;
 }
 
 body.light-mode .menu.active ul li a:hover,

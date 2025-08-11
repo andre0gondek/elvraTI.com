@@ -18,11 +18,10 @@
   flex: 1 1 250px;
 }
 
-.footer-logo {
-  font-size: 2rem;
-  color: #1db1ff;
-  margin-bottom: 10px;
-}
+/* .footer-box img {
+  width: 250px;
+  margin-bottom: -30px;
+} */
 
 .footer-text {
   font-size: 1rem;
