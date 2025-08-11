@@ -18,10 +18,11 @@
   flex: 1 1 250px;
 }
 
-/* .footer-box img {
+ .footer-box img {
+  display: none;
   width: 250px;
   margin-bottom: -30px;
-} */
+}
 
 .footer-text {
   font-size: 1rem;
