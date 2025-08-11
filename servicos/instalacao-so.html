@@ -5,54 +5,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="../imagens/icone RL.png" type="image/png">
   <link rel="stylesheet" href="../stylefooter.css">
-  <title>Instalação de Sistema | RLTech</title>
+  <title>Instalação de Sistema | Elvra T.I</title>
   <style>
     body {
-      background-color: #0a0a0a;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #f5ebfa;
-      padding: 40px;
-      line-height: 1.7;
-    }
+  background-color: #0a0a0a;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f5ebfa;
+  padding: 40px;
+  line-height: 1.7;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
+body.light-mode {
+  background-color: #f5f5f5;
+  color: #222222;
+}
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: #a56abd;
-    }
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-    .descricao {
-      margin-bottom: 30px;
-    }
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #a56abd;
+  transition: color 0.3s ease;
+}
 
-    .preco {
-      font-size: 1.8rem;
-      color: #f5ebfa;
-      font-weight: bold;
-      margin-bottom: 40px;
-    }
+body.light-mode h1 {
+  color: #6e3482;
+}
 
-    .btn {
-      background: linear-gradient(90deg, #49225b, #a56abd);
-      padding: 14px 28px;
-      color: #011425;
-      text-decoration: none;
-      border-radius: 40px;
-      font-size: 1.2rem;
-      font-weight: 600;
-      display: inline-block;
-    }
+.descricao {
+  margin-bottom: 30px;
+}
 
-    .btn:hover {
-      background: linear-gradient(90deg, #a56abd, #49225b);
-    }
+.preco {
+  font-size: 1.8rem;
+  color: #f5ebfa;
+  font-weight: bold;
+  margin-bottom: 40px;
+  transition: color 0.3s ease;
+}
 
-    .btn-voltar {
+body.light-mode .preco {
+  color: #333333;
+}
+
+.btn {
+  background: linear-gradient(90deg, #49225b, #a56abd);
+  padding: 14px 28px;
+  color: #011425;
+  text-decoration: none;
+  border-radius: 40px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: inline-block;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, #a56abd, #49225b);
+}
+
+body.light-mode .btn {
+  background: linear-gradient(90deg, #a58ac9, #cdb9f5);
+  color: #000000;
+}
+
+body.light-mode .btn:hover {
+  background: linear-gradient(90deg, #cdb9f5, #a58ac9);
+}
+
+.btn-voltar {
   display: inline-block;
   margin-bottom: 40px;
   background: none;
@@ -70,6 +96,17 @@
   color: #190019;
 }
 
+body.light-mode .btn-voltar {
+  color: #6e3482;
+  border-color: #6e3482;
+  background: none;
+}
+
+body.light-mode .btn-voltar:hover {
+  background-color: #6e3482;
+  color: #f5ebfa;
+}
+
 .imagem-servico {
   width: 100%;
   max-width: 300px;
@@ -78,15 +115,42 @@
   box-shadow: 0 0 20px #49225b;
   position: relative;
   left: 200px;
+  transition: box-shadow 0.3s ease;
 }
+
+body.light-mode .imagem-servico {
+  box-shadow: 0 0 20px #a56abd;
+}
+
+@media (max-width: 785px) {
+  .imagem-servico {
+    left: 0px;
+  }
+}
+
+/* Botão para alternar tema fixo no canto superior direito */
+    #toggle-theme {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background: #6e3482;
+      color: #f5ebfa;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 0 10px #6e3482;
+      transition: background-color 0.3s ease;
+    }
+    #toggle-theme:hover {
+      background-color: #a56abd;
+    }
 
 #gvgmall{
     color: #a56abd  ;
 }
-
-@media (max-width: 785px){
-  .imagem-servico{left: 0px;}
-  }
   </style>
 </head>
 <body>
@@ -134,8 +198,44 @@
   </div>
 
   <div class="footer-bottom">
-    <p>&copy; 2025 RLTech Informática — Todos os direitos reservados.</p>
+    <p>&copy; 2025 Elvra - Soluções em T.I — Todos os direitos reservados.</p>
   </div>
 </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggleMenu = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    const toggleThemeBtn = document.getElementById('toggle-theme');
+
+    // Controle do menu mobile
+    if (toggleMenu && menu) {
+      toggleMenu.addEventListener('click', () => {
+        menu.classList.toggle('active');
+      });
+    }
+
+    // Aplica tema salvo no localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      document.body.classList.add('light-mode');
+    } else {
+      document.body.classList.remove('light-mode');
+    }
+
+    // Alternar tema e salvar no localStorage
+    if (toggleThemeBtn) {
+      toggleThemeBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+
+        if (document.body.classList.contains('light-mode')) {
+          localStorage.setItem('theme', 'light');
+        } else {
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+    }
+  });
+</script>
 </body>
 </html>

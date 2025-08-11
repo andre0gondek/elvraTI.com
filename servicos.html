@@ -6,7 +6,7 @@
   <link rel="icon" href="imagens/icone RL.png" type="image/png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="stylefooter.css">
-  <title>Catálogo de Serviços - RLTech</title>
+  <title>Catálogo de Serviços - Elvra T.I</title>
 
   <style>
     * {
@@ -21,12 +21,53 @@
       color: #ffffff;
       padding: 60px 40px;
       line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
+
+    /* Tema claro */
+    body.light-mode {
+      background-color: #f5f5f5;
+      color: #222222;
+    }
+    body.light-mode .card-servico {
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      color: #222;
+      box-shadow: 0 0 15px #c3b6d5;
+    }
+
+    body.light-mode .card-servico:hover {
+      box-shadow: 0 0 15px #6e3482;
+    }
+
+    body.light-mode .card-servico .preco {
+      color: #000000;
+      font-weight: 600;
+    }
+
+    body.light-mode h1, body.light-mode h2 {
+      color: #6e3482;
+    }
+    body.light-mode .btn-voltar {
+      color: #6e3482;
+      border-color: #6e3482;
+      background: none;
+    }
+    body.light-mode .btn-voltar:hover {
+      background-color: #6e3482;
+      color: #f5ebfa;
+    }
+    body.light-mode .tag {
+      background-color: #a27ecd;
+      color: #222;
+    }
+
+    
 
     h1 {
       font-size: 2.8rem;
       margin-bottom: 20px;
-      color: #6e3482  ;
+      color: #6e3482;
     }
 
     .categoria {
@@ -53,7 +94,7 @@
       padding: 20px;
       border: 1px solid #2a2a2a;
       box-shadow: 0 0 20px #190019;
-      transition: transform 0.2s ease;
+      transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease;
       text-decoration: none;
       color: #f5ebfa;
     }
@@ -64,7 +105,6 @@
     }
 
     .card-servico h3 {
-      
       font-size: 1.3rem;
       margin-bottom: 10px;
     }
@@ -82,31 +122,53 @@
       padding: 4px 8px;
       border-radius: 20px;
       margin-bottom: 10px;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     .btn-voltar {
-  display: inline-block;
-  margin-bottom: 40px;
-  background: none;
-  border: 2px solid #a56abd;
-  padding: 10px 20px;
-  font-size: 1rem;
-  color: #a56abd;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
+      display: inline-block;
+      margin-bottom: 40px;
+      background: none;
+      border: 2px solid #a56abd;
+      padding: 10px 20px;
+      font-size: 1rem;
+      color: #a56abd;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
 
-.btn-voltar:hover {
-  background-color: #a56abd;
-  color: #190019;
-}
+    .btn-voltar:hover {
+      background-color: #a56abd;
+      color: #190019;
+    }
+
+    /* Botão para alternar tema fixo no canto superior direito */
+    #toggle-theme {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background: #6e3482;
+      color: #f5ebfa;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 0 10px #6e3482;
+      transition: background-color 0.3s ease;
+    }
+    #toggle-theme:hover {
+      background-color: #a56abd;
+    }
   </style>
 </head>
 
-<body>
-  <a href="index.html" class="btn-voltar"><i class="fa-solid fa-house"></i> Home</a>
+ <a href="index.html" class="btn-voltar"><i class="fa-solid fa-house"></i> Home</a>
   <h1>Catálogo de Serviços</h1>
+
+  <button id="toggle-theme" aria-label="Alternar tema">Alternar Tema</button>
 
   <div class="categoria">
     <h2>💻 PC Desktop</h2>
@@ -131,7 +193,7 @@
         <h3>Instalação de hardware</h3>
         <p class="preco">R$ 90,00 + peça</p>
       </a>
-      
+    </div>
   </div>
 
   <div class="categoria">
@@ -147,11 +209,6 @@
         <h3>Upgrade de peça (se possível)</h3>
         <p class="preco">R$ 120,00</p>
       </a>
-      <!-- <a href="servicos/diagnostico-hardware-note.html" class="card-servico">
-        <span class="tag">Notebook</span>
-        <h3>Diagnóstico de problema</h3>
-        <p class="preco">R$ 70,00</p>
-      </a> -->
     </div>
   </div>
 
@@ -173,11 +230,6 @@
         <h3>Reset de senha</h3>
         <p class="preco">R$ 40,00</p>
       </a>
-      <!-- <a href="servicos/diagnostico-software.html" class="card-servico">
-        <span class="tag">Software</span>
-        <h3>Diagnóstico de problema no software</h3>
-        <p class="preco">R$ 30,00</p>
-      </a> -->
       <a href="servicos/otimizacao.html" class="card-servico">
         <span class="tag">Software</span>
         <h3>Otimização de desempenho</h3>
@@ -197,38 +249,62 @@
   </div>
 
   <footer class="footer">
-  <div class="footer-container">
-    <div class="footer-box">
-      <img src="imagens/" alt="">
-      <p class="footer-text">Tecnologia com responsabilidade.</p>
+    <div class="footer-container">
+      <div class="footer-box">
+        <img src="imagens/" alt="">
+        <p class="footer-text">Tecnologia com responsabilidade.</p>
+      </div>
+
+      <div class="footer-box">
+        <h4>Links Rápidos</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="index.html#sobre-nos">Sobre Nós</a></li>
+          <li><a href="servicos.html">Catálogo</a></li>
+          <li><a href="https://wa.me/5511961876851?text=Olá! Gostaria de agendar um atendimento com a RLTech." target="_blank">Atendimento</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-box">
+        <h4>Contato</h4>
+        <ul>
+          <li>Email: rltech0725@gmail.com</li>
+          <li>WhatsApp: (11) 96187-6851</li>
+        </ul>
+        <h4>Endereço</h4>
+        <p>R. Manoel Martins da Rocha, 579 -
+          Jardim Mangalot, São Paulo - SP</p>
+      </div>
     </div>
 
-    <div class="footer-box">
-      <h4>Links Rápidos</h4>
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="index.html#sobre-nos">Sobre Nós</a></li>
-        <li><a href="servicos.html">Catálogo</a></li>
-        <li><a href="https://wa.me/5511961876851?text=Olá! Gostaria de agendar um atendimento com a RLTech." target="_blank">Atendimento</a></li>
-        <!-- <li><a href="contato.html">Contato</a></li> -->
-      </ul>
+    <div class="footer-bottom">
+      <p>&copy; 2025 RLTech Informática — Todos os direitos reservados.</p>
     </div>
+  </footer>
 
-    <div class="footer-box">
-      <h4>Contato</h4>
-      <ul>
-        <li>Email: rltech0725@gmail.com</li>
-        <li>WhatsApp: (11) 96187-6851</li>
-      </ul>
-      <h4>Endereço</h4>
-      <p>R. Manoel Martins da Rocha, 579 -
-            Jardim Mangalot, São Paulo - SP</p>
-    </div>
-  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggleThemeBtn = document.getElementById('toggle-theme');
 
-  <div class="footer-bottom">
-    <p>&copy; 2025 RLTech Informática — Todos os direitos reservados.</p>
-  </div>
-</footer>
+      // Aplica tema salvo no localStorage
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
+      } else {
+        document.body.classList.remove('light-mode');
+      }
+
+      // Alternar tema e salvar no localStorage
+      toggleThemeBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+
+        if (document.body.classList.contains('light-mode')) {
+          localStorage.setItem('theme', 'light');
+        } else {
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+    });
+  </script>
 </body>
 </html>

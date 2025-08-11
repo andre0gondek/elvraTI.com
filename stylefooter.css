@@ -216,3 +216,34 @@
   }
 }
 
+/* Footer no tema claro */
+body.light-mode .footer {
+  background-color: #f9f9f9;
+  color: #121212;
+}
+
+body.light-mode .footer-container {
+  /* opcional: manter o mesmo layout */
+}
+
+body.light-mode .footer-box h4 {
+  color: #6e3482;
+}
+
+body.light-mode .footer-box ul li,
+body.light-mode .footer-text,
+body.light-mode .footer-bottom p {
+  color: #444;
+}
+
+body.light-mode .footer-box ul li a {
+  color: #6e3482;
+}
+
+body.light-mode .footer-box ul li a:hover {
+  color: #49225b;
+}
+
+body.light-mode .footer-bottom {
+  border-top: 1px solid #ccc;
+}
