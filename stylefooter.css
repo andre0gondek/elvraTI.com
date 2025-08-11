@@ -32,7 +32,7 @@
 .footer-box h4 {
   font-size: 1.2rem;
   margin-bottom: 15px;
-  color: #1db1ff;
+  color: #a56abd;
 }
 
 .footer-box ul {
@@ -52,7 +52,7 @@
 }
 
 .footer-box ul li a:hover {
-  color: #1db1ff;
+  color: #6e3482;
 }
 
 .footer-bottom {
@@ -61,7 +61,7 @@
   padding-top: 20px;
   text-align: center;
   font-size: 0.85rem;
-  color: #999;
+  color: #999;  
 }
 
 /* RESPONSIVIDADE GERAL */
