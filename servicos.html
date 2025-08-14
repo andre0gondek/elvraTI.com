@@ -319,6 +319,35 @@
       <p>&copy; 2025 Elvra - Soluções em T.I — Todos os direitos reservados.</p>
     </div>
   </footer>
-  <script src="tema.js"></script>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleThemeCheckbox = document.getElementById('toggle-theme');
+  const logos = document.querySelectorAll('.logo'); // pega todas as logos do header e footer
+
+  // Atualiza todas as logos conforme o tema
+  const atualizarLogos = (tema) => {
+    const logoSrc = tema === 'light' ? '/imagens/logo-clara.png' : '/imagens/logo-escura.png';
+    logos.forEach(logo => logo.src = logoSrc);
+  };
+
+  // Aplica tema
+  const aplicarTema = (tema) => {
+    document.body.classList.toggle('light-mode', tema === 'light');
+    if (toggleThemeCheckbox) toggleThemeCheckbox.checked = tema === 'light';
+    atualizarLogos(tema);
+    localStorage.setItem('theme', tema);
+  };
+
+  // Aplica tema salvo ou dark por padrão
+  aplicarTema(localStorage.getItem('theme') || 'dark');
+
+  // Alterna tema pelo switch
+  if (toggleThemeCheckbox) {
+    toggleThemeCheckbox.addEventListener('change', () => {
+      aplicarTema(toggleThemeCheckbox.checked ? 'light' : 'dark');
+    });
+  }
+});
+</script>
 </body>
 </html>
