@@ -29,7 +29,6 @@
       <li><a href="#agendar">Fale conosco</a></li>
       <!-- <li><a href="#nossaequipe">Nossa Equipe</a></li> -->
       <li>
-
   <label class="switch">
     <input type="checkbox" id="toggle-theme">
     <span class="slider round"></span>
@@ -210,13 +209,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const logos = document.querySelectorAll('.logo');
   const body = document.body;
 
-  // funcao feita para alterar os temas
+  const toggleMenu = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+
+  // Função para atualizar logos
   const atualizarLogos = (tema) => {
     const src = tema === 'light' ? 'imagens/logo-clara.png' : 'imagens/logo-escura.png';
     logos.forEach(logo => logo.src = src);
   };
 
-  // funcao de aplicação de temas
+  // Função para aplicar tema
   const aplicarTema = (tema) => {
     if (tema === 'light') {
       body.classList.add('light-mode');
@@ -229,16 +231,24 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem('theme', tema);
   };
 
-  // salvar tema como padrão
+  // Aplica tema salvo ou padrão
   const savedTheme = localStorage.getItem('theme') || 'dark';
   aplicarTema(savedTheme);
 
-  // alteração de tema no switch
+  // Alterna tema pelo switch
   toggleThemeCheckbox.addEventListener('change', () => {
     const novoTema = toggleThemeCheckbox.checked ? 'light' : 'dark';
     aplicarTema(novoTema);
   });
+
+  // Controle do menu mobile
+  if (toggleMenu && menu) {
+    toggleMenu.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  }
 });
+
 </script>
 
 
