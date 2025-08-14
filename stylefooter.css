@@ -19,7 +19,6 @@
 }
 
  .footer-box img {
-  display: none;
   width: 250px;
   margin-bottom: -30px;
 }
@@ -64,7 +63,7 @@
   color: #999;  
 }
 
-/* RESPONSIVIDADE GERAL */
+/* responsividade do footer */
 @media (max-width: 1024px) {
   #home {
     flex-direction: column;
@@ -183,7 +182,7 @@
   }
 }
 
-/* Para telas muito pequenas (celulares antigos, etc.) */
+/* telas menores que o padrão */
 @media (max-width: 480px) {
   #content-left h1 {
     font-size: 2.4rem;
@@ -201,7 +200,7 @@
   }
 }
 
-/* Para telas super largas como TVs ou monitores grandes */
+/* telas enormes */
 @media (min-width: 1600px) {
   body {
     font-size: 1.2rem;
@@ -216,15 +215,15 @@
   }
 }
 
-/* Footer no tema claro */
+/* tema claro para o footer */
 body.light-mode .footer {
-  background-color: #f9f9f9;
+  background-color: #eaeaea;
   color: #121212;
 }
 
-body.light-mode .footer-container {
-  /* opcional: manter o mesmo layout */
-}
+/* body.light-mode .footer-container {
+   opcional: apenas para manter o mesmo layout
+} */
 
 body.light-mode .footer-box h4 {
   color: #6e3482;

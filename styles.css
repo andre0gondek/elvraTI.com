@@ -12,7 +12,7 @@
   padding: 20px;
 }
 
-  /* Logo */
+  /* logo */
   #logo {
     position: absolute;
     top: 130px;
@@ -30,7 +30,7 @@
      margin-top: 300px;
   }
 
-   /* Texto principal */
+   /* slogan */
   #content-left {
     max-width: 700px;
   }
@@ -43,7 +43,7 @@
     margin-left: 0px;
   }
 
-  /* Imagem com brilho roxo */
+  /* imagem com brilho roxo */
   #content-right {
     position: relative;
     left: 300px;
@@ -62,7 +62,7 @@
     border-radius: 20px;
   }
 
-  /* Botão roxo degradê */
+  /* botão catálogo */
   .btn {
     display: inline-block;
     width: 240px;
@@ -85,7 +85,7 @@
     background: linear-gradient(90deg, #6e3482, #49225b);
   }
 
-  /* SEÇÃO SOBRE NÓS */
+  /* seção sobre nós */
 #sobre-nos {
   margin-top: 100px;
   width: 100%;
@@ -151,6 +151,8 @@
   margin-top: 30px;
 }
 
+  /*seção de serviços*/
+
 #servicos {
   background-color: #000;
   color: #f5ebfa;
@@ -196,7 +198,7 @@ transform: translateX(5px);
   box-shadow: 0 0 25px #49225b;
 }
 
-/* DEPOIMENTOS */
+/* seção de depoimentos */
 #depoimentos {
   background-color: #000000;
   padding: 80px 40px;
@@ -240,7 +242,7 @@ transform: translateX(5px);
   transition: color 0.3s;
 }
 
-/* AGENDAR */
+/* seção de agendamentos */
 #agendar {
   background-color: #000;
   padding: 80px 40px;
@@ -327,7 +329,7 @@ transform: translateX(5px);
 }
 
 
-/* Menu padrão (desktop) */
+/* Menu de desktop */
 .topo {
   background-color: #0a0a0a;
   color: #f5ebfa;
@@ -346,12 +348,11 @@ transform: translateX(5px);
   align-items: center;
 }
 
-.logo2 img.logo-img {
-  height: 50px; /* ajuste conforme o tamanho ideal no menu */
+.logo2 img.logo {
+  height: 80px;
   width: auto;
 }
 
-/* Menu visível em desktop */
 .menu ul {
   list-style: none;
   display: flex;
@@ -369,12 +370,11 @@ transform: translateX(5px);
   color: #6e3482;
 }
 
-/* Oculta botão no desktop */
 .menu-toggle {
   display: none;
 }
 
-/* Ajuste para telas pequenas - avaliação */
+/* ajuste para mobile first - avaliação */
 @media (max-width: 480px) {
   .avaliacao-botao {
     font-size: 1rem;
@@ -385,7 +385,7 @@ transform: translateX(5px);
 
 
 
-/* Estilo mobile */
+/* responsividade mobile-first */
 
 @media (min-width: 1501px) and (max-width: 1700px){
   #content-right {
@@ -397,7 +397,7 @@ transform: translateX(5px);
 }
 
 @media (min-width: 1400px) and (max-width: 1500px){
-    /* Imagem com brilho azul */
+
   #content-right {
     
     left: 50px;
@@ -407,7 +407,7 @@ transform: translateX(5px);
 }
 
 @media (min-width: 1025px) and (max-width: 1399.99px){
-    /* Imagem com brilho azul */
+   
   #content-right {
     
     left: 0px;
@@ -454,7 +454,7 @@ transform: translateX(5px);
     font-size: 1.3rem;
   }
 
-  /* Menu recolhido */
+  /* menu recolhido */
   .menu {
     display: none;
     flex-direction: column;
@@ -464,7 +464,7 @@ transform: translateX(5px);
     margin: 0;
   }
 
-  /* Menu visível quando clicado */
+  /* menu ativo ao clicar */
   .menu.active {
     display: flex;
     background-color: #0a0a0a;
@@ -486,20 +486,86 @@ transform: translateX(5px);
   }
 }
 
-/* Tema escuro (padrão) */
+/* tema escuro */
 body {
   background-color: #000;
   color: #f5ebfa;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Tema claro */
+/* tema claro */
 body.light-mode {
   background-color: #fff;
   color: #121212;
 }
 
-/* Ajustes dos elementos no modo claro */
+/* interruptor */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+/* botão para alternar tema */
+#toggle-theme {
+  margin-left: 20px;
+  padding: 8px 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 900;
+  transition: all 0.3s ease;
+}
+
+/* tema escuro */
+body:not(.light-mode) #toggle-theme {
+  background: #6e3482;
+  color: #f5ebfa;
+}
+
+/* tema claro */
+body.light-mode #toggle-theme {
+  background: #f5ebfa;
+  color: #6e3482;
+}
+
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #6e3482;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px; width: 18px;
+  left: 3px; bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #f5ebfa;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+  background-color: #6e3482;
+}
+
 body.light-mode a.btn {
   background: linear-gradient(90deg, #a58ac9, #cdb9f5);
   color: #121212;
@@ -550,7 +616,6 @@ body.light-mode #falarconos:hover {
   background: linear-gradient(90deg, #cdb9f5, #a58ac9);
 }
 
-/* Transições suaves para todos os elementos */
 body, #content-left, #content-right, header, section, footer {
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -588,7 +653,7 @@ body.light-mode #agendar p {
   color: #333;
 }
 
-/* Ajustes menu mobile no tema claro */
+/* menu mobile tema claro */
 body.light-mode .menu.active {
   background-color: #eaeaea; 
 }
@@ -600,6 +665,6 @@ body.light-mode .menu.active ul li button.toggle-theme-menu {
 
 body.light-mode .menu.active ul li a:hover,
 body.light-mode .menu.active ul li button.toggle-theme-menu:hover {
-  color: #6e3482; /* hover roxo */
+  color: #6e3482;
   background-color: transparent;
 }

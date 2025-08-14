@@ -3,156 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="../imagens/icone RL.png" type="image/png">
+  <link rel="icon" href="../imagens/icon.png" type="image/png">
   <link rel="stylesheet" href="../stylefooter.css">
+  <link rel="stylesheet" href="styleserv.css">
   <title>Formatação de Disco | Elvra T.I</title>
   <style>
-   body {
-  background-color: #0a0a0a;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #f5ebfa;
-  padding: 40px;
-  line-height: 1.7;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-body.light-mode {
-  background-color: #f5f5f5;
-  color: #222222;
-}
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #a56abd;
-  transition: color 0.3s ease;
-}
-
-body.light-mode h1 {
-  color: #6e3482;
-}
-
-.descricao {
-  margin-bottom: 30px;
-}
-
-.preco {
-  font-size: 1.8rem;
-  color: #f5ebfa;
-  font-weight: bold;
-  margin-bottom: 40px;
-  transition: color 0.3s ease;
-}
-
-body.light-mode .preco {
-  color: #333333;
-}
-
-.btn {
-  background: linear-gradient(90deg, #49225b, #a56abd);
-  padding: 14px 28px;
-  color: #011425;
-  text-decoration: none;
-  border-radius: 40px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  display: inline-block;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.btn:hover {
-  background: linear-gradient(90deg, #a56abd, #49225b);
-}
-
-body.light-mode .btn {
-  background: linear-gradient(90deg, #a58ac9, #cdb9f5);
-  color: #000000;
-}
-
-body.light-mode .btn:hover {
-  background: linear-gradient(90deg, #cdb9f5, #a58ac9);
-}
-
-.btn-voltar {
-  display: inline-block;
-  margin-bottom: 40px;
-  background: none;
-  border: 2px solid #a56abd;
-  padding: 10px 20px;
-  font-size: 1rem;
-  color: #a56abd;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.btn-voltar:hover {
-  background-color: #a56abd;
-  color: #190019;
-}
-
-body.light-mode .btn-voltar {
-  color: #6e3482;
-  border-color: #6e3482;
-  background: none;
-}
-
-body.light-mode .btn-voltar:hover {
-  background-color: #6e3482;
-  color: #f5ebfa;
-}
-
-.imagem-servico {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 12px;
-  margin: 30px 0;
-  box-shadow: 0 0 20px #49225b;
-  position: relative;
-  left: 200px;
-  transition: box-shadow 0.3s ease;
-}
-
-body.light-mode .imagem-servico {
-  box-shadow: 0 0 20px #a56abd;
-}
-
-@media (max-width: 785px) {
-  .imagem-servico {
-    left: 0px;
-  }
-}
-
-/* Botão para alternar tema fixo no canto superior direito */
-    #toggle-theme {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      padding: 10px 20px;
-      background: #6e3482;
-      color: #f5ebfa;
-      font-weight: 700;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      z-index: 1000;
-      box-shadow: 0 0 10px #6e3482;
-      transition: background-color 0.3s ease;
-    }
-    #toggle-theme:hover {
-      background-color: #a56abd;
-    }
-
-#gvgmall{
+    #gvgmall{
     color: #a56abd;
 }
   </style>
 </head>
+
 <body>
     <a href="../servicos.html" class="btn-voltar">⬅ Voltar ao Catálogo</a>
     <button id="toggle-theme" aria-label="Alternar tema">Alternar Tema</button>
@@ -170,16 +31,16 @@ body.light-mode .imagem-servico {
   <footer class="footer">
   <div class="footer-container">
     <div class="footer-box">
-      <img src="../imagens/rltec-removebg.png" alt="">
+      <img src="../imagens/logo-escura.png" alt="Logo" class="logo">
       <!-- <p class="footer-text">Tecnologia com responsabilidade.</p> -->
     </div>
 
     <div class="footer-box">
       <h4>Links Rápidos</h4>
       <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="index.html#sobre-nos">Sobre Nós</a></li>
-        <li><a href="servicos.html">Catálogo</a></li>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="../index.html#sobre-nos">Sobre Nós</a></li>
+        <li><a href="../servicos.html">Catálogo</a></li>
         <li><a href="https://wa.me/5511961876851?text=Olá! Gostaria de agendar um atendimento com a RLTech." target="_blank">Atendimento</a></li>
         <!-- <li><a href="contato.html">Contato</a></li> -->
       </ul>
@@ -198,44 +59,10 @@ body.light-mode .imagem-servico {
   </div>
 
   <div class="footer-bottom">
-    <p>&copy; 2025 Elvra - Soluções em <T class="I"></T> — Todos os direitos reservados.</p>
+    <p>&copy; 2025 Elvra - Soluções em T.I — Todos os direitos reservados.</p>
   </div>
 </footer>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const toggleMenu = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-    const toggleThemeBtn = document.getElementById('toggle-theme');
-
-    // Controle do menu mobile
-    if (toggleMenu && menu) {
-      toggleMenu.addEventListener('click', () => {
-        menu.classList.toggle('active');
-      });
-    }
-
-    // Aplica tema salvo no localStorage
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-      document.body.classList.add('light-mode');
-    } else {
-      document.body.classList.remove('light-mode');
-    }
-
-    // Alternar tema e salvar no localStorage
-    if (toggleThemeBtn) {
-      toggleThemeBtn.addEventListener('click', () => {
-        document.body.classList.toggle('light-mode');
-
-        if (document.body.classList.contains('light-mode')) {
-          localStorage.setItem('theme', 'light');
-        } else {
-          localStorage.setItem('theme', 'dark');
-        }
-      });
-    }
-  });
-</script>
+<script src="../tema.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="imagens/icone RL.png" type="image/png">
+  <link rel="icon" href="imagens/icon.png" type="image/png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="stylefooter.css">
   <title>Catálogo de Serviços - Elvra T.I</title>
@@ -24,7 +24,63 @@
       transition: background-color 0.3s ease, color 0.3s ease;
     }
 
+    /* TEMA CLARO */
+
+    /* interruptor */
+    .switch {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+      z-index: 1000;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0;
+      right: 0; bottom: 0;
+      background-color: #6e3482;
+      transition: 0.4s;
+      border-radius: 34px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #f5ebfa;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+      background-color: #6e3482;
+    }
+
     /* Tema claro */
+    body.light-mode {
+      background-color: #f5f5f5;
+      color: #222222;
+    }
+
+
     body.light-mode {
       background-color: #f5f5f5;
       color: #222222;
@@ -61,8 +117,6 @@
       background-color: #a27ecd;
       color: #222;
     }
-
-    
 
     h1 {
       font-size: 2.8rem;
@@ -143,32 +197,16 @@
       color: #190019;
     }
 
-    /* Botão para alternar tema fixo no canto superior direito */
-    #toggle-theme {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      padding: 10px 20px;
-      background: #6e3482;
-      color: #f5ebfa;
-      font-weight: 700;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      z-index: 1000;
-      box-shadow: 0 0 10px #6e3482;
-      transition: background-color 0.3s ease;
-    }
-    #toggle-theme:hover {
-      background-color: #a56abd;
-    }
   </style>
 </head>
 
  <a href="index.html" class="btn-voltar"><i class="fa-solid fa-house"></i> Home</a>
   <h1>Catálogo de Serviços</h1>
 
-  <button id="toggle-theme" aria-label="Alternar tema">Alternar Tema</button>
+  <label class="switch">
+    <input type="checkbox" id="toggle-theme"> 
+    <span class="slider round"></span>
+  </label>
 
   <div class="categoria">
     <h2>💻 PC Desktop</h2>
@@ -251,7 +289,7 @@
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-box">
-        <img src="imagens/" alt="">
+        <img src="imagens/logo-escura.png" alt="Logo" class="logo">
         <!-- <p class="footer-text">Tecnologia com responsabilidade.</p> -->
       </div>
 
@@ -278,33 +316,9 @@
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2025 RLTech Informática — Todos os direitos reservados.</p>
+      <p>&copy; 2025 Elvra - Soluções em T.I — Todos os direitos reservados.</p>
     </div>
   </footer>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const toggleThemeBtn = document.getElementById('toggle-theme');
-
-      // Aplica tema salvo no localStorage
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme === 'light') {
-        document.body.classList.add('light-mode');
-      } else {
-        document.body.classList.remove('light-mode');
-      }
-
-      // Alternar tema e salvar no localStorage
-      toggleThemeBtn.addEventListener('click', () => {
-        document.body.classList.toggle('light-mode');
-
-        if (document.body.classList.contains('light-mode')) {
-          localStorage.setItem('theme', 'light');
-        } else {
-          localStorage.setItem('theme', 'dark');
-        }
-      });
-    });
-  </script>
+  <script src="tema.js"></script>
 </body>
 </html>
