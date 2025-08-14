@@ -1,27 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
   const toggleThemeCheckbox = document.getElementById('toggle-theme');
-  const headerLogo = document.querySelector('.topo .logo');
-  const footerLogo = document.querySelector('.footer .logo');
+  const logos = document.querySelectorAll('.logo'); // pega todas as logos
 
-  // Detecta profundidade da página e monta caminho correto para imagens
-  const getBasePath = () => {
-    const pathParts = window.location.pathname.split('/');
-    pathParts.pop(); // remove o arquivo atual
-    return pathParts.length > 1 ? '../'.repeat(pathParts.length - 1) : '';
-  };
-  const basePath = getBasePath();
-
-  // Atualiza as logos de header e footer
+  // Atualiza todas as logos com base no tema
   const atualizarLogos = (tema) => {
     const logoSrc = tema === 'light'
-      ? `${basePath}imagens/logo-clara.png`
-      : `${basePath}imagens/logo-escura.png`;
-
-    if (headerLogo) headerLogo.src = logoSrc;
-    if (footerLogo) footerLogo.src = logoSrc;
+      ? '/imagens/logo-clara.png'
+      : '/imagens/logo-escura.png';
+    logos.forEach(logo => logo.src = logoSrc);
   };
 
-  // Aplica tema (light ou dark)
+  // Aplica o tema (light ou dark)
   const aplicarTema = (tema) => {
     if (tema === 'light') {
       document.body.classList.add('light-mode');
@@ -38,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const savedTheme = localStorage.getItem('theme') || 'dark';
   aplicarTema(savedTheme);
 
-  // Se houver switch, adiciona listener
+  // Listener para alternar tema pelo switch
   if (toggleThemeCheckbox) {
     toggleThemeCheckbox.addEventListener('change', () => {
       const novoTema = toggleThemeCheckbox.checked ? 'light' : 'dark';
@@ -46,4 +35,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-  
