@@ -322,15 +322,15 @@
   <script>
 document.addEventListener("DOMContentLoaded", () => {
   const toggleThemeCheckbox = document.getElementById('toggle-theme');
-  const logos = document.querySelectorAll('.logo'); // pega todas as logos do header e footer
+  const logos = document.querySelectorAll('.logo'); // pega todas as logos (header e footer)
 
-  // Atualiza todas as logos conforme o tema
+  // Função para atualizar as logos conforme o tema
   const atualizarLogos = (tema) => {
-    const logoSrc = tema === 'light' ? '/imagens/logo-clara.png' : '/imagens/logo-escura.png';
+    const logoSrc = tema === 'light' ? 'imagens/logo-clara.png' : 'imagens/logo-escura.png';
     logos.forEach(logo => logo.src = logoSrc);
   };
 
-  // Aplica tema
+  // Função para aplicar tema
   const aplicarTema = (tema) => {
     document.body.classList.toggle('light-mode', tema === 'light');
     if (toggleThemeCheckbox) toggleThemeCheckbox.checked = tema === 'light';
@@ -349,5 +349,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 </script>
+
 </body>
 </html>
