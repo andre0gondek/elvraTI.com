@@ -1,31 +1,44 @@
 document.addEventListener("DOMContentLoaded", () => {
   const toggleThemeCheckbox = document.getElementById('toggle-theme');
-
-  // seleciona as logos do header e do footer
   const headerLogo = document.querySelector('.topo .logo');
   const footerLogo = document.querySelector('.footer .logo');
 
-  // função para aplicar tema
+  // Detecta profundidade da página e monta caminho correto para imagens
+  const getBasePath = () => {
+    const pathParts = window.location.pathname.split('/');
+    pathParts.pop(); // remove o arquivo atual
+    return pathParts.length > 1 ? '../'.repeat(pathParts.length - 1) : '';
+  };
+  const basePath = getBasePath();
+
+  // Atualiza as logos de header e footer
+  const atualizarLogos = (tema) => {
+    const logoSrc = tema === 'light'
+      ? `${basePath}imagens/logo-clara.png`
+      : `${basePath}imagens/logo-escura.png`;
+
+    if (headerLogo) headerLogo.src = logoSrc;
+    if (footerLogo) footerLogo.src = logoSrc;
+  };
+
+  // Aplica tema (light ou dark)
   const aplicarTema = (tema) => {
     if (tema === 'light') {
       document.body.classList.add('light-mode');
-      if (headerLogo) headerLogo.src = '/imagens/logo-clara.png';
-      if (footerLogo) footerLogo.src = '/imagens/logo-clara.png';
-      toggleThemeCheckbox.checked = true;
+      if (toggleThemeCheckbox) toggleThemeCheckbox.checked = true;
     } else {
       document.body.classList.remove('light-mode');
-      if (headerLogo) headerLogo.src = '/imagens/logo-escura.png';
-      if (footerLogo) footerLogo.src = '/imagens/logo-escura.png';
-      toggleThemeCheckbox.checked = false;
+      if (toggleThemeCheckbox) toggleThemeCheckbox.checked = false;
     }
+    atualizarLogos(tema);
     localStorage.setItem('theme', tema);
   };
 
-  // aplicar o tema salvo no localStorage
+  // Recupera tema salvo ou define dark por padrão
   const savedTheme = localStorage.getItem('theme') || 'dark';
   aplicarTema(savedTheme);
 
-  // alternancia de tema ao clicar no interruptor
+  // Se houver switch, adiciona listener
   if (toggleThemeCheckbox) {
     toggleThemeCheckbox.addEventListener('change', () => {
       const novoTema = toggleThemeCheckbox.checked ? 'light' : 'dark';
@@ -33,3 +46,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+  
